@@ -44,14 +44,15 @@ Convention for constants:
 * By convention, constant names are  usually written in uppercase letters. This is for their easy indentification and  differentiation and differentiation from variables in the source code.
 
 3. Kiểu dữ liệu (Data Type)
-Go is statically typed programing language.
+
+GoLang is statically typed programing language.
 Type Convert:
 ```string``` to ```int``` ==> strconv.Atoi(str)
 ```string``` to ```float``` ===> strconv.ParseFloat(s string, bitSize int) bigSize = {32: float32, 64: float64}
 ```string``` to ```boolean``` ==> strconv.ParseBool(s string). Accepted values = [ 1, t, T, TRUE, true, True, 0, f, F, FALSE, false, False]
 ```boolean``` to ```string``` ==> strcnv.FormatBool(bool)
 ```float``` to ```string``` ==> strcnv.FormatFloat(f float64, fmt byte, prec, bigSize int) fmt: according to the format, prec = precision( độ chính xác)
-{% highlihig golang %}
+{% highlight golang %}
 	var s string = strconv.FormatFloat(f, 'E', -1, 32)
 {% endhighlight %}
 ```int``` to ```string``` ==> strcnv.FormatInt(i int, base int) base = hệ số 
