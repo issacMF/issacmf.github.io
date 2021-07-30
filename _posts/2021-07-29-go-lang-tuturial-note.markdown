@@ -204,7 +204,7 @@ func add(x int, y int) int {
 	total = x + y
 	return total
 }
-{% endhighligen %}
+{% endhighlight %}
 
 Có thể đặt tên cho giá trị trả về của function
 {% highlight golang %}
@@ -222,7 +222,7 @@ func rectangle(l int, b int) (area int, parameter int) {
 	area = l * b
 	return // Return statement without specify variable name
 }
-{% endhighligen %}
+{% endhighlight %}
 
 Convention for named function:
 * A name must begin with a letter, and can have any number of additional letters and numbers.
@@ -255,7 +255,7 @@ func main() {
 
 	fmt.Println("After :", text, age)
 }
-{% endhighligen %}
+{% endhighlight %}
 
 Anonymous function
 
@@ -274,7 +274,7 @@ var (
 func main() {
 	fmt.Println(area(20, 30))
 }
-{% endhighligen %}
+{% endhighlight %}
 
 {% highlight golang %}
 package main
@@ -286,7 +286,7 @@ func main() {
 		fmt.Println(l * b)
 	}(20, 30)
 }
-{% endhighligen %}
+{% endhighlight %}
 
 {% highlight golang %}
 package main
@@ -301,7 +301,7 @@ func main() {
 		}(100),
 	)
 }
-{% endhighligen %}
+{% endhighlight %}
 
 Closures func là một dạng đặc biệt của Anonymous func nó có thể get biến ngoài body func
 {% highlight golang %}
@@ -319,7 +319,7 @@ func main() {
 		fmt.Println(area)
 	}()
 }
-{% endhighligen %}
+{% endhighlight %}
 
 {% highlight golang %}
 package main
@@ -334,7 +334,7 @@ func main() {
 		fmt.Printf("%.2f Meter = %.2f Inch\n", i, rad)
 	}
 }
-{% endhighligen %}
+{% endhighlight %}
 
 
 Higher Order func là trường hợp một func có thể lấy một func khác làm agrument hay là giá trị trả về
@@ -356,7 +356,7 @@ func main() {
 	partial := partialSum(3)
 	fmt.Println(partial(7))
 }
-{% endhighligen %}
+{% endhighlight %}
 
 {% highlight golang %}
 package main
@@ -375,7 +375,7 @@ func main() {
 	fmt.Println(squareSum(5)(6)(7))
 }
 
-{% endhighligen %}
+{% endhighlight %}
 
 User Defined Function Types in Golang
 
@@ -400,7 +400,7 @@ func main() {
 	// 5*5 + 6*6 + 7*7
 	fmt.Println(squareSum(5)(6)(7))
 }
-{% endhighligen %}
+{% endhighlight %}
 
 
 
@@ -422,7 +422,7 @@ func variadicFunc(i ...interface{}){
 		fmt.Println(v,"--",reflect.ValueOf(v).Kind())
 	}
 }
-{% endhighligen %}
+{% endhighlight %}
 
 9. Deferred Functions Calls
 Go có một câu lệnh đặc biệt gọi là defer lên lịch chạy một lệnh gọi hàm sau khi hàm hoàn thành. Hãy xem xét ví dụ sau:
@@ -443,5 +443,5 @@ func main() {
 	first()
 }
 
-{% endhighligen %}
+{% endhighlight %}
 
