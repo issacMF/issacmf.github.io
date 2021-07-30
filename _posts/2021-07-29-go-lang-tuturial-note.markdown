@@ -445,8 +445,3 @@ func main() {
 
 {% endhighligen %}
 
-
-{% highlight golang %}
-{% endhighligen %}
-{% highlight golang %}
-{% endhighligen %}
