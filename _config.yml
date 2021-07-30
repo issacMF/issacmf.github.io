@@ -3,6 +3,7 @@ name:         No pain no gain
 tagline:      A responsive theme for your project on GitHub Pages
 baseurl:          "https://issacmf.github.io/noteandcode" 
 locale:       "en"
+encoding: UTF-8
 
 # Gems
 gems:
