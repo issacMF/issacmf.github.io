@@ -9,7 +9,7 @@ tag: Golang
 
 Golang là một ngôn ngữ mạnh về ```concurrent programs```
 
-1. Các cách khai báo biến
+#### 1. Các cách khai báo biến
 {% highlight golang %}
 var a int
 var b = 0
@@ -35,7 +35,7 @@ Convention for biến:
 * If a name consists of multiple word, each word after the first should be capitalized like this: empName, EmpAddress, etc.
 * Variable names are case-sensitive (car, Car and CAR are three different variables)
 
-2. Hằng số (CONSTANTS)
+#### 2. Hằng số (CONSTANTS)
 
 Hằng số được khai báo với keyword ```const```
 
@@ -43,7 +43,7 @@ Convention for constants:
 * Name of constants must follow the same rules as variable names, which means a valid constants name must starts with a letter or underscore.
 * By convention, constant names are  usually written in uppercase letters. This is for their easy indentification and  differentiation and differentiation from variables in the source code.
 
-3. Kiểu dữ liệu (Data Type)
+#### 3. Kiểu dữ liệu (Data Type)
 
 GoLang is statically typed programing language.
 Type Convert:
@@ -58,7 +58,7 @@ Type Convert:
 ```int``` to ```string``` ==> strcnv.FormatInt(i int, base int) base = hệ số 
 ```int``` to ```float``` ==> int32(f) , float32(i), int64(f), float64(i)
 
-4. If ... Else Conditional
+#### 4. If ... Else Conditional
 
 {% highlight golang %}
 if  condition { 
@@ -97,7 +97,7 @@ func main() {
 
 {% endhighlight %}
 
-5. Switch case Conditional
+#### 5. Switch case Conditional
 
 {% highlight golang %}
 today := time.Now()
@@ -134,7 +134,7 @@ default:
 
 ```fallthroungh``` dùng để pass block tiếp theo của case.
 
-6. For Loop
+#### 6. For Loop
 
 {% highlight golang %}
 k := 1
@@ -188,7 +188,7 @@ for {
 }
 {% endhighlight%}
 
-7. Functions
+#### 7. Functions
 
 Function được khai báo bằng keyword ```func```
 
@@ -404,7 +404,7 @@ func main() {
 
 
 
-8. Variadic Functions
+#### 8. Variadic Functions
 
 {% highlight golang %}
 package main
@@ -424,7 +424,7 @@ func variadicFunc(i ...interface{}){
 }
 {% endhighlight %}
 
-9. Deferred Functions Calls
+#### 9. Deferred Functions Calls
 Go có một câu lệnh đặc biệt gọi là defer lên lịch chạy một lệnh gọi hàm sau khi hàm hoàn thành. Hãy xem xét ví dụ sau:
 
 Tạm hoãn invoke func. Defer Function sẽ được gọi ngay sau khi func chạy xong.
@@ -445,3 +445,100 @@ func main() {
 
 {% endhighlight %}
 
+#### 10. Panic And Recover
+
+Panic để ném ra lỗi và thoát khoỉ flow của chương trình.
+Recover thường được chạy trong hàm defer
+
+#### 11. Array:
+Các kiểu khai báo array:
+
+{% highlight golang %}
+x := [5]int{10, 20, 30, 40, 50}   // Intialized with values
+var y [5]int = [5]int{10, 20, 30} // Partial assignment
+z := [...]int{10, 20, 30} // Init with ellipses ...
+a := [5]int{1: 10, 3: 30} // Specific elements
+
+{% endhighlight %}
+
+Loop through an array
+{% highlight golang %}
+package main
+
+import "fmt"
+
+x := [5]int{10, 20, 30, 40, 50}   // Intialized with values
+var y [5]int = [5]int{10, 20, 30} // Partial assignment
+z := [...]int{10, 20, 30} // Init with ellipses ...
+a := [5]int{1: 10, 3: 30} // Specific elements
+func main() {
+	intArray := [5]int{10, 20, 30, 40, 50}
+
+	fmt.Println("\n---------------Example 1--------------------\n")
+	for i := 0; i < len(intArray); i++ {
+		fmt.Println(intArray[i])
+	}
+
+	fmt.Println("\n---------------Example 2--------------------\n")
+	for index, element := range intArray {
+		fmt.Println(index, "=>", element)
+
+	}
+
+	fmt.Println("\n---------------Example 3--------------------\n")
+	for _, value := range intArray {
+		fmt.Println(value)
+	}
+
+	j := 0
+	fmt.Println("\n---------------Example 4--------------------\n")
+	for range intArray {
+		fmt.Println(intArray[j])
+		j++
+	}
+}
+{% endhighlight %}
+
+#### 12. Slices
+
+A slices is a segment of arrays that can grow and shrink. Slices has ```cap``` and ```len```. 
+
+Declation:
+{% highlight golang %}
+var intSlice []int
+var strSlice []string
+
+var intSlice = make([]int, 10)        // when length and capacity is same
+var strSlice = make([]string, 10, 20) // when length and capacity is different
+
+var intSlice = []int{10, 20, 30, 40}
+var strSlice = []string{"India", "Canada", "Japan"}
+
+var intSlice = new([50]int)[0:10]
+
+a := make([]int, 2, 5)
+a = append(a, 30, 40, 50, 60, 70, 80, 90)
+
+slice2 = append(slice2, slice1...)
+
+copy(b, a)              // Copy function
+{% endhighlight %}
+
+#### 13. Map
+
+Map is unordered collections. 
+
+{% highlight golang %}
+var employee = map[string]int{"Mark": 10, "Sandy": 20}
+var employee = make(map[string]int)
+employeeList := make(map[string]int)
+
+employee["Mark"] = 10 // Update or Add
+
+delete(employee, "Mark") // Delete Map
+
+sort.Strings(keys) // sort map
+
+{% endhighlight %}
+
+#### 14. Struct
