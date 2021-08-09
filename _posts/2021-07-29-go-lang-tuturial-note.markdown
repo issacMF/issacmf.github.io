@@ -542,3 +542,14 @@ sort.Strings(keys) // sort map
 {% endhighlight %}
 
 #### 14. Struct
+
+Struct được khai báo với keyword ```type```
+
+
+{% highlight golang %}
+type identifier struct{
+  field1 data_type
+  field2 data_type
+  field3 data_type
+}
+{% endhighlight %}
